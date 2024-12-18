@@ -58,8 +58,9 @@ const Toast = ({
 
     return (
         <div
-            className={`fixed ${positionClasses[pos]} p-4 rounded-lg shadow-lg flex items-center gap-2
-                        cursor-pointer animate-opacity transition-opacity duration-500 ${typeClasses[type]}`
+            className={`fixed ${positionClasses[pos]} p-4 rounded-lg shadow-lg flex 
+                        items-center gap-2 cursor-pointer animate-opacity transition-opacity 
+                        duration-500 ${typeClasses[type]} hover:scale-110`
             }
             onClick={onClose}
             style={{ animation: `opacity 1s ease-in-out` }}
