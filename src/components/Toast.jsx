@@ -59,14 +59,35 @@ const Toast = ({
     return (
         <div
             className={`fixed ${positionClasses[pos]} p-4 rounded-lg shadow-lg flex 
-                        items-center gap-2 cursor-pointer animate-opacity transition-opacity 
-                        duration-500 ${typeClasses[type]} hover:scale-110`
+                        items-center gap-2 cursor-pointer animate-opacity 
+                        transition-opacity 
+                        duration-500 ${typeClasses[type]} hover:scale-95`
             }
             onClick={onClose}
             style={{ animation: `opacity 1s ease-in-out` }}
         >
             {typeIcons[type]}
             <span className="flex-1">{message}</span>
+
+            {duration !== "none" && (
+                <div
+                    className="absolute bottom-0 left-0 h-1 bg-white opacity-50"
+                    style={{
+                        width: "100%",
+                        animation: `progress ${duration}ms linear`,
+                    }}
+                ></div>
+            )}
+            <style jsx>{`
+                @keyframes progress {
+                    from {
+                        width: 100%;
+                    }
+                    to {
+                        width: 0%;
+                    }
+                }
+            `}</style>
         </div>
     )
 }
