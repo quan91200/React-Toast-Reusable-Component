@@ -71,9 +71,8 @@ const Toast = ({
 
             {duration !== "none" && (
                 <div
-                    className="absolute bottom-0 left-0 h-1 bg-white opacity-50"
+                    className="absolute bottom-0 left-0 h-1 bg-white opacity-50 w-full"
                     style={{
-                        width: "100%",
                         animation: `progress ${duration}ms linear`,
                     }}
                 ></div>

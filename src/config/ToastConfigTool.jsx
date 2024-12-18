@@ -31,7 +31,6 @@ const durationOptions = [
 const ToastConfigTool = () => {
     const { showToast } = useToast()
 
-    // State quản lý các thuộc tính của Toast
     const [config, setConfig] = useState({
         message: "This is a Toast!",
         type: "success",
@@ -39,13 +38,11 @@ const ToastConfigTool = () => {
         duration: 3000,
     })
 
-    // Hàm xử lý thay đổi input
     const handleChange = (e) => {
         const { name, value } = e.target
         setConfig((prev) => ({ ...prev, [name]: value === "none" ? null : value, }))
     }
 
-    // Hàm gọi Toast
     const handleShowToast = () => {
         showToast({
             message: config.message,
@@ -59,7 +56,6 @@ const ToastConfigTool = () => {
         <div className="p-4 border rounded-lg shadow-md w-[400px]">
             <h2 className="text-lg font-bold mb-4">Toast Config Tool</h2>
 
-            {/* Message Input */}
             <label className="block mb-2">
                 Message:
                 <input
@@ -71,7 +67,6 @@ const ToastConfigTool = () => {
                 />
             </label>
 
-            {/* Type Selector */}
             <label className="block mb-2">
                 Type:
                 <select
@@ -88,7 +83,6 @@ const ToastConfigTool = () => {
                 </select>
             </label>
 
-            {/* Position Selector */}
             <label className="block mb-2">
                 Position:
                 <select
@@ -105,9 +99,8 @@ const ToastConfigTool = () => {
                 </select>
             </label>
 
-            {/* Duration Input */}
             <label className="block mb-4">
-                Duration (s):
+                Duration (ms):
                 <select
                     name="duration"
                     value={config.duration === null ? "none" : config.duration}
@@ -122,7 +115,6 @@ const ToastConfigTool = () => {
                 </select>
             </label>
 
-            {/* Show Toast Button */}
             <button
                 onClick={handleShowToast}
                 className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600"
