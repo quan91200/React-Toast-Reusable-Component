@@ -107,7 +107,7 @@ const ToastConfigTool = () => {
 
             {/* Duration Input */}
             <label className="block mb-4">
-                Duration (ms):
+                Duration (s):
                 <select
                     name="duration"
                     value={config.duration === null ? "none" : config.duration}
